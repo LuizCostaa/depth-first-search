@@ -52,7 +52,7 @@ int mostra_pilha(Pilha p) {
 		printf("Dados da pilha: \n");
 		int i;
 		for(i=0; i<p.topo; i++) {
-			printf("%d", p.dados[i]);
+			printf("%d \n", p.dados[i]);
 		}
 	}
 }
