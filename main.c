@@ -55,7 +55,6 @@ int main(int argc, char *argv[]) {
 	empilha(&pilha, verticeInicial);
 	
 	while (desempilha(&pilha, &temp) != ERRO_PILHA_VAZIA) {
-		
 		if (vetorStatus[temp] == 0)	{
 			printf("%d \n", temp + 1);
 			vetorStatus[temp] = 1;
