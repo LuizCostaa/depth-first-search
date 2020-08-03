@@ -41,7 +41,25 @@ int main(int argc, char *argv[]) {
 	
 	mostra_matriz(matrizAdjacencia);
 	
+	vetorStatus = malloc(sizeof(int) * tam);
+	memset(vetorStatus, 0, sizeof(int) * tam);
 	
+	
+	printf("Digite o vertice inicial de busca: ");
+	scanf("%d", &verticeInicial);
+	
+	inicializa_pilha(&pilha, tam);
+	empilha(&pilha, verticeInicial);
+	
+	while (!pilha_vazia(pilha)) {
+		int temp;
+		desempilha(&pilha, &temp);
+		
+		if (vetorStatus[temp] == 0)	{
+			printf("%d", temp);
+			vetorStatus[temp] = 1;
+		}		
+	} 
 	
 	return 0;
 }
