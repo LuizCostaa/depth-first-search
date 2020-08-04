@@ -8,38 +8,31 @@
 int main(int argc, char *argv[]) {
 	Matriz matrizAdjacencia;
 	Pilha pilha;
+	FILE *file;
 	int *vetorStatus;
-	int tam, verticeInicial, i, temp;
+	int tam, verticeInicial, i, j, temp;
 	
 	printf("Digite o tamanho da matriz: ");
 	scanf("%d", &tam);
 	
 	inicializa_matriz(&matrizAdjacencia, tam, tam);
 	
-	modifica_valor_matriz(&matrizAdjacencia, 0, 1, 1);
-	modifica_valor_matriz(&matrizAdjacencia, 1, 0, 1);
-	modifica_valor_matriz(&matrizAdjacencia, 1, 2, 1);
-	modifica_valor_matriz(&matrizAdjacencia, 1, 5, 1);
-	modifica_valor_matriz(&matrizAdjacencia, 2, 1, 1);
-	modifica_valor_matriz(&matrizAdjacencia, 2, 4, 1);
-	modifica_valor_matriz(&matrizAdjacencia, 2, 5, 1);
-	modifica_valor_matriz(&matrizAdjacencia, 2, 6, 1);
-	modifica_valor_matriz(&matrizAdjacencia, 3, 4, 1);
-	modifica_valor_matriz(&matrizAdjacencia, 3, 7, 1);
-	modifica_valor_matriz(&matrizAdjacencia, 4, 2, 1);
-	modifica_valor_matriz(&matrizAdjacencia, 4, 3, 1);
-	modifica_valor_matriz(&matrizAdjacencia, 4, 7, 1);
-	modifica_valor_matriz(&matrizAdjacencia, 5, 1, 1);
-	modifica_valor_matriz(&matrizAdjacencia, 5, 2, 1);
-	modifica_valor_matriz(&matrizAdjacencia, 5, 6, 1);
-	modifica_valor_matriz(&matrizAdjacencia, 6, 2, 1);
-	modifica_valor_matriz(&matrizAdjacencia, 6, 5, 1);
-	modifica_valor_matriz(&matrizAdjacencia, 7, 3, 1);
-	modifica_valor_matriz(&matrizAdjacencia, 7, 4, 1);
-	modifica_valor_matriz(&matrizAdjacencia, 7, 8, 1);
-	modifica_valor_matriz(&matrizAdjacencia, 8, 7, 1);
+	file = fopen("grafos.txt", "r");
 	
+	if(file == NULL) {
+		printf("Arquivo nao pode ser aberto\n");
+		return 0;
+	}
 	
+	for(i=0; i<tam; i++) {
+		for(j=0; j<tam; j++) {
+			int valorCelula;
+			fscanf(file, "%d", &valorCelula);
+			if(valorCelula == 1) {
+				modifica_valor_matriz(&matrizAdjacencia, i, j, valorCelula);
+			}
+		}
+	}
 	
 	mostra_matriz(matrizAdjacencia);
 	
