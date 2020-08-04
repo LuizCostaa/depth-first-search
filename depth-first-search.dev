@@ -61,7 +61,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit2]
-FileName=Matriz.c
+FileName=Pilha.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -71,6 +71,16 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
+FileName=Pilha.h
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit5]
 FileName=Matriz.h
 CompileCpp=0
 Folder=
@@ -81,17 +91,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit4]
-FileName=Pilha.c
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit5]
-FileName=Pilha.h
+FileName=Matriz.c
 CompileCpp=0
 Folder=
 Compile=1
