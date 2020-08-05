@@ -5,12 +5,19 @@
 #include "Pilha.h"
 #include "Matriz.h"
 
+// Alunos: John Eric Jahn && Luiz Guilherme
+
 int main(int argc, char *argv[]) {
 	Matriz matrizAdjacencia;
 	Pilha pilha;
 	FILE *file;
 	int *vetorStatus;
 	int tam, verticeInicial, i, j, temp;
+	
+	printf("______________________________________________________________________\n");
+	printf("				AVISO!!\n\n");
+	printf("  RESPEITE O TAMANHO DEFINIDO DA MATRIZ COM A QUE ESTA NO ARQUIVO\n");
+	printf("______________________________________________________________________\n\n");
 	
 	printf("Digite o tamanho da matriz: ");
 	scanf("%d", &tam);
@@ -34,13 +41,15 @@ int main(int argc, char *argv[]) {
 		}
 	}
 	
+	printf("___________________________________________\n\n");
+	
 	mostra_matriz(matrizAdjacencia);
 	
 	vetorStatus = malloc(sizeof(int) * tam);
 	memset(vetorStatus, 0, sizeof(int) * tam);
 	
 	
-	printf("Digite o vertice inicial de busca: ");
+	printf("\nDigite o vertice inicial de busca: ");
 	scanf("%d", &verticeInicial);
 	verticeInicial = verticeInicial - 1;
 		
